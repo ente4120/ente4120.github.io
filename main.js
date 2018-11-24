@@ -332,7 +332,7 @@ var MoviesService = /** @class */ (function () {
     MoviesService.prototype.getMovieDetails = function (id) {
         var _this = this;
         this.http
-            .get('http://www.omdbapi.com/?i=' + id + '&apikey=994bc2b9')
+            .get('https://www.omdbapi.com/?i=' + id + '&apikey=994bc2b9')
             .subscribe(function (data) {
             _this.movies.push(data);
             _this.moviesUpdated.next(_this.movies.slice());
