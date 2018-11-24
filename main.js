@@ -318,7 +318,7 @@ var MoviesService = /** @class */ (function () {
     MoviesService.prototype.getMovies = function () {
         var _this = this;
         this.http
-            .get('www.omdbapi.com/?s=super&type=movie&apikey=994bc2b9&page=' + (this.pageLoaded++))
+            .get('http://www.omdbapi.com/?s=super&type=movie&apikey=994bc2b9&page=' + (this.pageLoaded++))
             .subscribe(function (data) {
             var tempMoviesList = [];
             tempMoviesList = data.Search;
@@ -331,7 +331,7 @@ var MoviesService = /** @class */ (function () {
     MoviesService.prototype.getMovieDetails = function (id) {
         var _this = this;
         this.http
-            .get('www.omdbapi.com/?i=' + id + '&apikey=994bc2b9')
+            .get('http://www.omdbapi.com/?i=' + id + '&apikey=994bc2b9')
             .subscribe(function (data) {
             _this.movies.push(data);
             _this.moviesUpdated.next(_this.movies.slice());
