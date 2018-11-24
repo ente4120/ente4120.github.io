@@ -232,7 +232,6 @@ var MovieListComponent = /** @class */ (function () {
         var _this = this;
         this.moviesService.getMovies();
         this.moviesService.getMovies();
-        this.moviesService.getMovies();
         this.moviesSub = this.moviesService.getMoviesUpdateListener()
             .subscribe(function (movies) {
             _this.movies = movies;
@@ -319,7 +318,7 @@ var MoviesService = /** @class */ (function () {
     MoviesService.prototype.getMovies = function () {
         var _this = this;
         this.http
-            .get('https://www.omdbapi.com/?s=super&type=movie&apikey=994bc2b9&page=' + (this.pageLoaded++))
+            .get('www.omdbapi.com/?s=super&type=movie&apikey=994bc2b9&page=' + (this.pageLoaded++))
             .subscribe(function (data) {
             var tempMoviesList = [];
             tempMoviesList = data.Search;
@@ -332,7 +331,7 @@ var MoviesService = /** @class */ (function () {
     MoviesService.prototype.getMovieDetails = function (id) {
         var _this = this;
         this.http
-            .get('https://www.omdbapi.com/?i=' + id + '&apikey=994bc2b9')
+            .get('www.omdbapi.com/?i=' + id + '&apikey=994bc2b9')
             .subscribe(function (data) {
             _this.movies.push(data);
             _this.moviesUpdated.next(_this.movies.slice());
