@@ -320,6 +320,7 @@ var MoviesService = /** @class */ (function () {
         this.http
             .get('http://www.omdbapi.com/?s=super&type=movie&apikey=994bc2b9&page=' + (this.pageLoaded++))
             .subscribe(function (data) {
+            console.log(data);
             var tempMoviesList = [];
             tempMoviesList = data.Search;
             tempMoviesList.forEach(function (element) {
